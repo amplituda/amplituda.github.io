@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/amplituda/amplituda.github.io/issues"
   },
-  "homepage": "https://github.com/amplituda/amplituda.github.io#readme"
+  "homepage": "https://github.com/amplituda/amplituda.github.io#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
 }
