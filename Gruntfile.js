@@ -32,14 +32,24 @@ module.exports = function(grunt) {
                     'css/style.css': 'src/scss/style.scss'
                 }
             }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'dest/js/output.min.js': ['js/bootstrap.js', 'js/main.js']
+                }
+            }
         }
     });
-
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['sass', 'cssmin', 'htmlmin']);
+
+
+
+    grunt.registerTask('default', ['sass', 'cssmin', 'htmlmin', 'uglify']);
 
 };
