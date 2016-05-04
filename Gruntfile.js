@@ -12,9 +12,9 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        htmlmin: {          // Task
-            dist: {         // Target
-                options: {  // Target options
+        htmlmin: { // Task
+            dist: { // Target
+                options: { // Target options
                     removeComments: true,
                     collapseWhitespace: true
                 },
@@ -22,12 +22,24 @@ module.exports = function(grunt) {
                     'index.html': 'src/index.html'
                 }
             }
+        },
+        sass: {
+            dist: {
+                options: {
+                    style: 'expanded'
+                },
+                files: {
+                    'css/style.css': 'src/scss/style.scss'
+                }
+            }
         }
     });
 
+
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-    grunt.registerTask('default', ['cssmin', 'htmlmin']);
+    grunt.registerTask('default', ['sass', 'cssmin', 'htmlmin']);
 
 };
